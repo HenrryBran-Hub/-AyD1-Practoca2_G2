@@ -1,0 +1,101 @@
+<mxfile host="65bd71144e">
+    <diagram id="XWbzcaFaSJ1hpQxbZILu" name="Página-1">
+        <mxGraphModel dx="2340" dy="1033" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+            <root>
+                <mxCell id="0"/>
+                <mxCell id="1" parent="0"/>
+                <mxCell id="dunfmuqgtmw-Zayev9ta-24" value="NOTA" style="swimlane;fontSize=16;strokeWidth=1;fillColor=#e3c800;fontColor=#000000;strokeColor=#B09500;" parent="1" vertex="1">
+                    <mxGeometry x="173" y="540" width="480" height="410" as="geometry"/>
+                </mxCell>
+                <mxCell id="dunfmuqgtmw-Zayev9ta-26" value="&lt;font style=&quot;vertical-align: inherit;&quot;&gt;&lt;font style=&quot;vertical-align: inherit;&quot;&gt;&lt;font style=&quot;vertical-align: inherit;&quot;&gt;&lt;font style=&quot;vertical-align: inherit;&quot;&gt;Entidad&lt;br&gt;&lt;/font&gt;&lt;/font&gt;&lt;/font&gt;&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" parent="dunfmuqgtmw-Zayev9ta-24" vertex="1">
+                    <mxGeometry x="75" y="320" width="80" height="20" as="geometry"/>
+                </mxCell>
+                <mxCell id="dunfmuqgtmw-Zayev9ta-27" value="" style="endArrow=none;html=1;rounded=0;strokeWidth=1;fillColor=#e51400;strokeColor=#B20000;" parent="dunfmuqgtmw-Zayev9ta-24" edge="1">
+                    <mxGeometry width="50" height="50" relative="1" as="geometry">
+                        <mxPoint x="75" y="360" as="sourcePoint"/>
+                        <mxPoint x="155" y="360" as="targetPoint"/>
+                        <Array as="points"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="dunfmuqgtmw-Zayev9ta-28" value="" style="shape=flexArrow;endArrow=classic;html=1;rounded=0;strokeWidth=4;endWidth=7;endSize=3.33;width=0;fillColor=#f0a30a;strokeColor=#BD7000;" parent="dunfmuqgtmw-Zayev9ta-24" edge="1">
+                    <mxGeometry width="50" height="50" relative="1" as="geometry">
+                        <mxPoint x="175" y="330" as="sourcePoint"/>
+                        <mxPoint x="245" y="330" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="dunfmuqgtmw-Zayev9ta-29" value="" style="shape=flexArrow;endArrow=classic;html=1;rounded=0;strokeWidth=4;endWidth=7;endSize=3.33;width=0;fillColor=#f0a30a;strokeColor=#BD7000;" parent="dunfmuqgtmw-Zayev9ta-24" edge="1">
+                    <mxGeometry width="50" height="50" relative="1" as="geometry">
+                        <mxPoint x="175" y="360" as="sourcePoint"/>
+                        <mxPoint x="245" y="360" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="dunfmuqgtmw-Zayev9ta-30" value="Entidad" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;strokeWidth=1;fontStyle=1;fontSize=14;" parent="dunfmuqgtmw-Zayev9ta-24" vertex="1">
+                    <mxGeometry x="255" y="320" width="60" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="dunfmuqgtmw-Zayev9ta-31" value="Relacion" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontStyle=1;fontSize=14;" parent="dunfmuqgtmw-Zayev9ta-24" vertex="1">
+                    <mxGeometry x="255" y="350" width="60" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="dunfmuqgtmw-Zayev9ta-25" value="&lt;span style=&quot;&quot;&gt;En el futuro diagrama lógico se harán los cambios&lt;br&gt;&amp;nbsp;de nombres mas propios de las entidades:&lt;/span&gt;&lt;br style=&quot;&quot;&gt;&lt;div style=&quot;&quot;&gt;&lt;ol&gt;&lt;li&gt;Registro_Usuario ---------&amp;gt; Usuario&lt;/li&gt;&lt;li&gt;Registro_Comentarios ------------------&amp;gt; Comentario&lt;/li&gt;&lt;li&gt;Registro_Estrellas -------------&amp;gt; Calificacion&lt;/li&gt;&lt;li&gt;Registro_Watchlist --------------------&amp;gt; Watchlist&lt;/li&gt;&lt;li&gt;Registro_Peliculas ------------------&amp;gt; Pelicula&lt;/li&gt;&lt;li&gt;Registro_Actor&amp;nbsp; ---------------&amp;gt; Actor&lt;/li&gt;&lt;/ol&gt;&lt;/div&gt;" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=16;" parent="dunfmuqgtmw-Zayev9ta-24" vertex="1">
+                    <mxGeometry x="30" y="55" width="420" height="240" as="geometry"/>
+                </mxCell>
+                <mxCell id="dunfmuqgtmw-Zayev9ta-33" value="IMDbX" style="swimlane;fillColor=#e51400;fontColor=#ffffff;strokeColor=#B20000;fontStyle=1;fontSize=16;" parent="1" vertex="1">
+                    <mxGeometry x="-120" y="60" width="1050" height="460" as="geometry"/>
+                </mxCell>
+                <mxCell id="HrGNdVxw7txuGFgmqtGO-14" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="dunfmuqgtmw-Zayev9ta-33" source="HrGNdVxw7txuGFgmqtGO-2" target="HrGNdVxw7txuGFgmqtGO-10" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="HrGNdVxw7txuGFgmqtGO-19" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="dunfmuqgtmw-Zayev9ta-33" source="HrGNdVxw7txuGFgmqtGO-2" target="HrGNdVxw7txuGFgmqtGO-11" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="HrGNdVxw7txuGFgmqtGO-2" value="&lt;font style=&quot;vertical-align: inherit;&quot;&gt;&lt;font style=&quot;vertical-align: inherit;&quot;&gt;&lt;font style=&quot;vertical-align: inherit;&quot;&gt;&lt;font style=&quot;vertical-align: inherit;&quot;&gt;Registro_Usuarios&lt;br&gt;&lt;/font&gt;&lt;/font&gt;&lt;/font&gt;&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontStyle=1;fontColor=#000000;" parent="dunfmuqgtmw-Zayev9ta-33" vertex="1">
+                    <mxGeometry x="60" y="150" width="140" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="HrGNdVxw7txuGFgmqtGO-17" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;" parent="dunfmuqgtmw-Zayev9ta-33" source="HrGNdVxw7txuGFgmqtGO-6" target="HrGNdVxw7txuGFgmqtGO-10" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="HrGNdVxw7txuGFgmqtGO-23" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.25;exitDx=0;exitDy=0;entryX=0;entryY=0.25;entryDx=0;entryDy=0;" parent="dunfmuqgtmw-Zayev9ta-33" source="HrGNdVxw7txuGFgmqtGO-6" target="HrGNdVxw7txuGFgmqtGO-7" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="HrGNdVxw7txuGFgmqtGO-24" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" parent="dunfmuqgtmw-Zayev9ta-33" source="HrGNdVxw7txuGFgmqtGO-6" target="HrGNdVxw7txuGFgmqtGO-11" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="HrGNdVxw7txuGFgmqtGO-6" value="&lt;font style=&quot;vertical-align: inherit;&quot;&gt;&lt;font style=&quot;vertical-align: inherit;&quot;&gt;&lt;font style=&quot;vertical-align: inherit;&quot;&gt;&lt;font style=&quot;vertical-align: inherit;&quot;&gt;Registro_Peliculas&lt;br&gt;&lt;/font&gt;&lt;/font&gt;&lt;/font&gt;&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontColor=#000000;fontStyle=1" parent="dunfmuqgtmw-Zayev9ta-33" vertex="1">
+                    <mxGeometry x="530" y="280" width="140" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="HrGNdVxw7txuGFgmqtGO-21" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="dunfmuqgtmw-Zayev9ta-33" source="HrGNdVxw7txuGFgmqtGO-7" target="HrGNdVxw7txuGFgmqtGO-6" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="HrGNdVxw7txuGFgmqtGO-7" value="&lt;font style=&quot;vertical-align: inherit;&quot;&gt;&lt;font style=&quot;vertical-align: inherit;&quot;&gt;&lt;font style=&quot;vertical-align: inherit;&quot;&gt;&lt;font style=&quot;vertical-align: inherit;&quot;&gt;Registro_Actores&lt;br&gt;&lt;/font&gt;&lt;/font&gt;&lt;/font&gt;&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontColor=#000000;fontStyle=1" parent="dunfmuqgtmw-Zayev9ta-33" vertex="1">
+                    <mxGeometry x="830" y="280" width="140" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="HrGNdVxw7txuGFgmqtGO-10" value="&lt;font style=&quot;vertical-align: inherit;&quot;&gt;&lt;font style=&quot;vertical-align: inherit;&quot;&gt;&lt;font style=&quot;vertical-align: inherit;&quot;&gt;&lt;font style=&quot;vertical-align: inherit;&quot;&gt;Regisro_Watchlist&lt;br&gt;&lt;/font&gt;&lt;/font&gt;&lt;/font&gt;&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontColor=#000000;fontStyle=1" parent="dunfmuqgtmw-Zayev9ta-33" vertex="1">
+                    <mxGeometry x="290" y="280" width="140" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="HrGNdVxw7txuGFgmqtGO-26" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" parent="dunfmuqgtmw-Zayev9ta-33" source="HrGNdVxw7txuGFgmqtGO-11" target="HrGNdVxw7txuGFgmqtGO-25" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="HrGNdVxw7txuGFgmqtGO-11" value="&lt;font style=&quot;vertical-align: inherit;&quot;&gt;&lt;font style=&quot;vertical-align: inherit;&quot;&gt;&lt;font style=&quot;vertical-align: inherit;&quot;&gt;&lt;font style=&quot;vertical-align: inherit;&quot;&gt;Regisro_Estrellas&lt;br&gt;&lt;/font&gt;&lt;/font&gt;&lt;/font&gt;&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontColor=#000000;fontStyle=1" parent="dunfmuqgtmw-Zayev9ta-33" vertex="1">
+                    <mxGeometry x="310" y="150" width="140" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="HrGNdVxw7txuGFgmqtGO-22" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" parent="dunfmuqgtmw-Zayev9ta-33" source="HrGNdVxw7txuGFgmqtGO-11" target="HrGNdVxw7txuGFgmqtGO-11" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="HrGNdVxw7txuGFgmqtGO-25" value="&lt;font style=&quot;vertical-align: inherit;&quot;&gt;&lt;font style=&quot;vertical-align: inherit;&quot;&gt;&lt;font style=&quot;vertical-align: inherit;&quot;&gt;&lt;font style=&quot;vertical-align: inherit;&quot;&gt;Regisro_Comentarios&lt;br&gt;&lt;/font&gt;&lt;/font&gt;&lt;/font&gt;&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontStyle=1;fontColor=#000000;" parent="dunfmuqgtmw-Zayev9ta-33" vertex="1">
+                    <mxGeometry x="310" y="70" width="140" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="9" value="Registro del actor como por ejemplo: nombreapellido,edad,fecha de nacimiento, lugar de nacimiento etc." style="strokeWidth=1;shadow=0;dashed=0;align=center;html=1;shape=mxgraph.mockup.text.stickyNote2;fontColor=#666666;mainText=;fontSize=10;whiteSpace=wrap;fillColor=#ffffcc;strokeColor=#F62E00;" vertex="1" parent="dunfmuqgtmw-Zayev9ta-33">
+                    <mxGeometry x="880" y="320" width="170" height="100" as="geometry"/>
+                </mxCell>
+                <mxCell id="11" value="Se tendra el resgistro de los usuarios que quieran utilizar la pagina con datos personales de ellos por ejemplo:nombre, direccion, telefono etc.&amp;nbsp;" style="strokeWidth=1;shadow=0;dashed=0;align=center;html=1;shape=mxgraph.mockup.text.stickyNote2;fontColor=#666666;mainText=;fontSize=9;whiteSpace=wrap;fillColor=#ffffcc;strokeColor=#F62E00;" vertex="1" parent="dunfmuqgtmw-Zayev9ta-33">
+                    <mxGeometry x="-40" y="170" width="130" height="100" as="geometry"/>
+                </mxCell>
+                <mxCell id="12" value="Se tendra un wathclist que sera como un pagina de favoritos o por ver que pude ingresar el usuario a su tabla." style="strokeWidth=1;shadow=0;dashed=0;align=center;html=1;shape=mxgraph.mockup.text.stickyNote2;fontColor=#666666;mainText=;fontSize=9;whiteSpace=wrap;fillColor=#ffffcc;strokeColor=#F62E00;" vertex="1" parent="dunfmuqgtmw-Zayev9ta-33">
+                    <mxGeometry x="260" y="320" width="150" height="80" as="geometry"/>
+                </mxCell>
+                <mxCell id="13" value="Actura como un registro general de calificacion de peliculas donde tendremos una clasificaion por usuario y varios comentarios del mismo&amp;nbsp;" style="strokeWidth=1;shadow=0;dashed=0;align=center;html=1;shape=mxgraph.mockup.text.stickyNote2;fontColor=#666666;mainText=;fontSize=9;whiteSpace=wrap;fillColor=#ffffcc;strokeColor=#F62E00;" vertex="1" parent="dunfmuqgtmw-Zayev9ta-33">
+                    <mxGeometry x="380" y="190" width="156" height="80" as="geometry"/>
+                </mxCell>
+            </root>
+        </mxGraphModel>
+    </diagram>
+</mxfile>
