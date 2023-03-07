@@ -6,10 +6,25 @@ ___
 [Enunciado de la Practica](https://drive.google.com/file/d/1mtYvtMfy98tOsxpcWwm3A7LujsSby-hX/view?usp=sharing)
 
 ### Indicaciones Basicas :nerd_face:
-    *Para el archivo del modelo conceptual instalar Drawio en Visual Studio Code o abrirlo en en esta [Pagina](https://app.diagrams.net/)
+    *Para el archivo del modelo conceptual instalar Drawio en Visual Studio Code o abrirlo en en esta https://app.diagrams.net/
     *Para la base de datos se utilizo AWS con RDS con MySQL
     *Para el Backend se utilizo Node JS
     *Para el Frontedn se utilizo React JS
+### Comandos para Node JS Utilizados
+
+```javascript
+npm int --yes;
+npm install express mysql nodemon body-parser cors dotenv sequelize --save -dev; 
+```
+Tambien se cambio un archivo index.js en el Backend:
+
+```javascript
+{
+  "scripts": {
+    "start": "nodemon index.js"
+  }
+} 
+```
 ___
 ### Integrantes
 | Nombre | Carnet | Usuario Git |
