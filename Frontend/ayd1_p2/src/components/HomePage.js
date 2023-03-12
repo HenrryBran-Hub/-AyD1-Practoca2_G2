@@ -1,7 +1,7 @@
 import React from 'react';
 
 const HomePage = () => {
-  return <h1>IMDbX</h1>;
+    return <h1>IMDbX</h1>;
 };
 
 
