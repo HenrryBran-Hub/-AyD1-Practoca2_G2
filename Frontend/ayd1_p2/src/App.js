@@ -3,6 +3,7 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import NavBar from './components/NavBar';
 import HomePage from './components/HomePage';
 import Signup from './components/Signup';
+import Movie from './components/Movie'
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 
@@ -12,7 +13,8 @@ function App() {
       <NavBar />
       <Routes>
         <Route path='/' exact='' element={<HomePage />}></Route>
-        <Route path='/signup' exact='' element={<Signup />}></Route>
+        <Route path='/signup' element={<Signup />}></Route>
+        <Route path='/movie' element={<Movie />}></Route>
       </Routes>
     </BrowserRouter>
   );

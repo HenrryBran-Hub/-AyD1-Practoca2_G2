@@ -14,8 +14,9 @@ ___
 
 ```javascript
 npm int --yes;
-npm install express mysql nodemon body-parser cors dotenv sequelize --save -dev; 
+npm install express mysql nodemon body-parser cors dotenv sequelize multer --save -dev; 
 ```
+
 Tambien se cambio un archivo index.js en el Backend:
 
 ```javascript
@@ -25,6 +26,28 @@ Tambien se cambio un archivo index.js en el Backend:
   }
 } 
 ```
+
+Para levantar el servicio del Backend hacemos lo siguiente:
+
+```javascript
+cd Backend
+npx nodemon index.js
+```
+### Comandos para React JS Utilizados
+
+```javascript
+npx create-react-app ayd1_2;
+npm install axios cors express nodemon react-router-dom  --save -dev; 
+```
+Tambien se borraron varios archivos de react js que no nos servirian.
+Para levantar el servicio del Frontend hacemos lo siguiente:
+
+```javascript
+cd Frontend
+cd ayd_p2
+npm start
+```
+
 ___
 ### Integrantes
 | Nombre | Carnet | Usuario Git |

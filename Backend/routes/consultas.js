@@ -1,9 +1,42 @@
-const express = require('express');
-const router = express.Router();
+const express = require('express')
+const multer = require('multer')
+const path = require('path')
+const fs = require('fs')
 
+const router = express.Router();
 const mysqlConnection = require('../database');
 
+const disktorage = multer.diskStorage({
+    destination: path.join(__dirname, '../images'),
+    filename: (req, file, cb) => {
+        cb(null, Date.now() + '-ayd1-' + file.originalname)
+    }
+})
+
+const fileUpload = multer({
+    storage: disktorage
+}).single('image')
+
+
 //En esta parte agregamos nuestros metodos get y post
+
+//subir archivos y guardar en proyecto
+router.post('/images/post', fileUpload, (req, res) => {
+    const typo = req.file.mimetype
+    const INombre = req.file.originalname
+    const Poster = fs.readFileSync(path.join(__dirname, '../images/' + req.file.filename))
+    const Nombre = req.body.Nombre
+    const Director = req.body.Director
+    const Estreno = req.body.Estreno
+    const Resumen = req.body.Resumen
+    mysqlConnection.query('INSERT INTO Pelicula set ?', [{Nombre, Director, Estreno, Resumen, typo, INombre, Poster}],(err, rows, fields) => {
+        if (!err) {
+            res.json(rows);
+        } else {
+            console.log(err);
+        }
+    })
+});
 
 //Agregar un usuario
 router.post('/registrousuarios', (req, res) => {
@@ -32,7 +65,6 @@ router.get('/validarCorreo/:Correo', (req, res) => {
         }
     })
 });
-
 
 
 module.exports = router;
