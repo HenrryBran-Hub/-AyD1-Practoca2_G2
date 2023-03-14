@@ -31,8 +31,10 @@ CREATE TABLE IF NOT EXISTS Actor (
     Nombre VARCHAR (150) NOT NULL,
     Apellido VARCHAR (150) NOT NULL,
     Fecha_Nacimiento DATE NOT NULL,
-    Nacionalidad VARCHAR (50) NOT NULL,
-    Foto MEDIUMBLOB NOT NULL,
+    Nacionalidad VARCHAR (50) NOT NULL,    
+    typo VARCHAR (150) NOT NULL,
+    INombre VARCHAR (200) NOT NULL,
+    Foto LONGBLOB NOT NULL,
     PRIMARY KEY (Id_Actor)
 )ENGINE=INNODB;
 
@@ -103,5 +105,3 @@ CREATE TABLE IF NOT EXISTS Comentario (
     FOREIGN KEY (Id_Calificacion) REFERENCES Calificacion(Id_Calificacion)
     ON DELETE CASCADE ON UPDATE CASCADE
 )ENGINE=INNODB;
-
-

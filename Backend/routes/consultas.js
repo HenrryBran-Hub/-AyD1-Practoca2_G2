@@ -20,8 +20,8 @@ const fileUpload = multer({
 
 //En esta parte agregamos nuestros metodos get y post
 
-//subir archivos y guardar en proyecto
-router.post('/images/post', fileUpload, (req, res) => {
+//subir archivos y guardar en proyecto de pelicula
+router.post('/registropelicula/post', fileUpload, (req, res) => {
     const typo = req.file.mimetype
     const INombre = req.file.originalname
     const Poster = fs.readFileSync(path.join(__dirname, '../images/' + req.file.filename))
@@ -30,6 +30,24 @@ router.post('/images/post', fileUpload, (req, res) => {
     const Estreno = req.body.Estreno
     const Resumen = req.body.Resumen
     mysqlConnection.query('INSERT INTO Pelicula set ?', [{Nombre, Director, Estreno, Resumen, typo, INombre, Poster}],(err, rows, fields) => {
+        if (!err) {
+            res.json(rows);
+        } else {
+            console.log(err);
+        }
+    })
+});
+
+//subir archivos y guardar en proyecto de actor
+router.post('/registroactor/post', fileUpload, (req, res) => {
+    const typo = req.file.mimetype
+    const INombre = req.file.originalname
+    const Foto = fs.readFileSync(path.join(__dirname, '../images/' + req.file.filename))
+    const Nombre = req.body.Nombre
+    const Apellido = req.body.Apellido
+    const Fecha_Nacimiento = req.body.Fecha_Nacimiento
+    const Nacionalidad = req.body.Nacionalidad
+    mysqlConnection.query('INSERT INTO Actor set ?', [{Nombre, Apellido, Fecha_Nacimiento, Nacionalidad, typo, INombre, Foto}],(err, rows, fields) => {
         if (!err) {
             res.json(rows);
         } else {
