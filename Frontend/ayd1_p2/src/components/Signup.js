@@ -38,8 +38,7 @@ const Signup = () => {
                 }
             });
             const data = await response.json();
-            alert(data)
-            if (data != '') {
+            if (Object.keys(data).length > 0) {
                 alert('Este correo ya está registrado. Por favor ingresa otro correo.');
                 return;
             }
@@ -61,10 +60,10 @@ const Signup = () => {
             if (data) {
                 alert('Registro exitoso. Bienvenido!');
                 setUser({
-                    Nombre:'',
-                    Apellido:'',
-                    Correo:'',
-                    Contrasenia:''
+                    Nombre: '',
+                    Apellido: '',
+                    Correo: '',
+                    Contrasenia: ''
                 })
                 return;
             } else {
@@ -82,47 +81,31 @@ const Signup = () => {
     return (
         <div className="container-fluid">
             <div className="row justify-content-center align-items-center">
-                <div className="col-sm-6 my-container d-flex justify-content-center align-items-center">
+                <div className="col-sm-12 my-container d-flex justify-content-center align-items-center">
                     <form onSubmit={handleSubmit}>
                         <div className='mb-3'>
-                            <group controlId="formBasicName">
-                                <label>Name</label>
-                            </group>
+                            <label>Nombre</label>
                         </div>
                         <div className='mb-3'>
-                            <group controlId="formBasicName">
-                                <input type="text" name="Nombre" value={user.Nombre} onChange={handleChange} placeholder="Ingrese Nombre" />
-                            </group>
+                            <input type="text" name="Nombre" value={user.Nombre} onChange={handleChange} placeholder="Ingrese Nombre" />
                         </div>
                         <div className='mb-3'>
-                            <group controlId="formBasicLastName">
-                                <label>Last Name</label>
-                            </group>
+                            <label>Apellido</label>
                         </div>
                         <div className='mb-3'>
-                            <group controlId="formBasicLastName">
-                                <input type="text" name="Apellido" value={user.Apellido} onChange={handleChange} placeholder="Ingrese Apellido" />
-                            </group>
+                            <input type="text" name="Apellido" value={user.Apellido} onChange={handleChange} placeholder="Ingrese Apellido" />
                         </div>
                         <div className='mb-3'>
-                            <group controlId="formBasicEmail">
-                                <label>Email address</label>
-                            </group>
+                            <label>Corre Electronico</label>
                         </div>
                         <div className='mb-3'>
-                            <group controlId="formBasicEmail">
-                                <input type="email" name="Correo" value={user.Correo} onChange={handleChange} placeholder="Ingrese Correo" />
-                            </group>
+                            <input type="email" name="Correo" value={user.Correo} onChange={handleChange} placeholder="Ingrese Correo" />
                         </div>
                         <div className='mb-3'>
-                            <group controlId="formBasicPassword">
-                                <label>Password</label>
-                            </group>
+                            <label>Contraseña</label>
                         </div>
                         <div className='mb-3'>
-                            <group controlId="formBasicPassword">
-                                <input type="password" name="Contrasenia" value={user.Contrasenia} onChange={handleChange} placeholder="Contraseña" />
-                            </group>
+                            <input type="password" name="Contrasenia" value={user.Contrasenia} onChange={handleChange} placeholder="Contraseña" />
                         </div>
                         <div className='mb-3'>
                             <button type="submit" className="btn btn-primary">
