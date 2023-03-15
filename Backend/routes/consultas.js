@@ -13,8 +13,8 @@ router.get('/getPeliculas',(req, res) => {
             res.json(rows);
         }else {
         }
-    }
-}
+    })
+})
 
 //Agregar un usuario
 router.post('/registrousuarios', (req, res) => {
