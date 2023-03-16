@@ -45,8 +45,9 @@ CREATE TABLE IF NOT EXISTS Pelicula (
     Director VARCHAR (150) NOT NULL,
     Estreno DATE NOT NULL,
     Resumen VARCHAR (500) NOT NULL,
-    Poster MEDIUMBLOB NOT NULL,
-    Trailer VARCHAR (150) NOT NULL,
+    typo VARCHAR (150) NOT NULL,
+    INombre VARCHAR (200) NOT NULL,
+    Poster LONGBLOB NOT NULL,
     PRIMARY KEY (Id_Pelicula)
 )ENGINE=INNODB;
 
