@@ -84,5 +84,104 @@ router.get('/validarCorreo/:Correo', (req, res) => {
     })
 });
 
+//lista de contactos
+router.get('/getactorescast',(req, res) => {
+    let consulta = `SELECT *
+    FROM Actor`;
+    mysqlConnection.query(consulta, (err, rows, fields) => {
+        if (!err){
+           
+            //creo los archivos en la carpeta
+            rows.map( actor => {
+                fs.writeFileSync(path.join(__dirname, '../dbimages/' + actor.Id_Actor + actor.INombre + '-ayd1_p2.png'), actor.Foto)
+            })
+
+            const newdata = rows.map( actor => {
+                const {Foto, ... rest } = actor;
+                return { ...rest, Direccion: "\'" + path.join(__dirname, '../dbimages/' + actor.Id_Actor + actor.INombre + '-ayd1_p2.png') + "\'" };
+            })
+
+            res.json(newdata)
+                      
+        }else {
+            console.log(err);
+        }
+    })
+});
+
+//lista de contactos
+router.get('/getmoviescast',(req, res) => {
+    let consulta = `SELECT *
+    FROM Pelicula`;
+    mysqlConnection.query(consulta, (err, rows, fields) => {
+        if (!err){           
+            //creo los archivos en la carpeta
+            rows.map( movie => {
+                fs.writeFileSync(path.join(__dirname, '../dbimages/' + movie.Id_Pelicula + movie.INombre + '-ayd1_p2.png'), movie.Poster)
+            })
+
+            const newdata = rows.map( movie => {
+                const {Poster, ... rest } = movie;
+                return { ...rest, Direccion: "\'" + path.join(__dirname, '../dbimages/' + movie.Id_Pelicula + movie.INombre + '-ayd1_p2.png') + "\'" };
+            })
+            
+            res.json(newdata)
+                      
+        }else {
+            console.log(err);
+        }
+    })
+});
+
+router.get('/listapeliculas', (req, res) => {
+    let consulta = "SELECT Id_Pelicula,Nombre,Director,Estreno,INombre FROM Pelicula"
+    mysqlConnection.query(consulta, (err, rows, fields) => {
+        if (!err) {
+            res.json(rows);
+        } else {
+            console.log(err);
+        }
+    })
+});
+
+router.get('/listaactores', (req, res) => {
+    let consulta = "SELECT Id_Actor,Nombre,Apellido,Fecha_Nacimiento,INombre FROM Actor"
+    mysqlConnection.query(consulta, (err, rows, fields) => {
+        if (!err) {
+            res.json(rows);
+        } else {
+            console.log(err);
+        }
+    })
+});
+
+//Agregar un cast a la pelicula
+router.post('/registrocast/post', (req, res) => {
+    let contacto = "(\'" + req.body.Id_Actor + "\',\'" + req.body.Id_Pelicula + "\')"
+    let consulta = `INSERT INTO Reparto
+    (Id_Actor,Id_Pelicula)
+    VALUES ` + contacto;
+    mysqlConnection.query(consulta, (err, rows, fields) => {
+        if (!err) {
+            res.json(rows);
+        } else {
+            console.log(err);
+        }
+    })
+});
+
+//Agregar un cast a la pelicula
+router.post('/validadarreparto/post', (req, res) => {
+    let consulta = `SELECT *FROM Reparto
+    WHERE Id_Pelicula =` + "\'" + req.body.Id_Pelicula + "\'" + ` AND ` + 
+    ` Id_Actor = ` + "\'" + req.body.Id_Actor + "\'";
+    mysqlConnection.query(consulta, (err, rows, fields) => {
+        if (!err) {
+            res.json(rows);
+        } else {
+            console.log(err);
+        }
+    })
+});
 
 module.exports = router;
