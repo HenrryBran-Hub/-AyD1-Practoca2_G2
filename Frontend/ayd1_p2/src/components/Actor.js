@@ -1,23 +1,22 @@
 import React, { useState } from 'react';
 
-const Movie = () => {
+const Actor = () => {
 
-    const [movie, setMovie] = useState({
+    const [actor, setActor] = useState({
         Nombre: '',
-        Director: '',
-        Estreno: '',
-        Resumen: '',
-        type: '',
+        Apellido: '',
+        Fecha_Nacimiento: '',
+        Nacionalidad: '',
+        typo: '',
         INombre: '',
-        Poster: '',
-        Trailer: ''
+        Foto: '',
     })
 
     const [file, setFile] = useState(null)
 
     const handleChange = e => {
-        setMovie({
-            ...movie,
+        setActor({
+            ...actor,
             [e.target.name]: e.target.value
         })
     }
@@ -30,47 +29,46 @@ const Movie = () => {
         e.preventDefault();
 
         const formData = new FormData()
-        formData.append('Nombre', movie.Nombre)
-        formData.append('Director', movie.Director)
-        formData.append('Estreno', movie.Estreno)
-        formData.append('Resumen', movie.Resumen)
-        formData.append('type', movie.type)
-        formData.append('INombre', movie.INombre)
-        formData.append('Poster', movie.Poster)
-        formData.append('Trailer', movie.Trailer)
+        formData.append('Nombre', actor.Nombre)
+        formData.append('Apellido', actor.Apellido)
+        formData.append('Fecha_Nacimiento', actor.Fecha_Nacimiento)
+        formData.append('Nacionalidad', actor.Nacionalidad)
+        formData.append('typo', actor.typo)
+        formData.append('INombre', actor.INombre)
+        formData.append('Foto', actor.Foto)
         formData.append('image', file)
 
         // Validaciones de campos
-        if (!movie.Nombre || !movie.Director || !movie.Estreno || !movie.Resumen || !file) {
+        if (!actor.Nombre || !actor.Apellido || !actor.Fecha_Nacimiento || !actor.Nacionalidad || !file) {
             alert('Por favor llena todos los campos.');
             return;
         }
 
         try {
-            const response = await fetch('http://localhost:9000/registropelicula/post', {
+            const response = await fetch('http://localhost:9000/registroactor/post', {
                 method: 'POST',
                 body: formData
             });
             const data = await response.json();
             if (data) {
-                alert('Se ha subido la pelicula');
+                alert('Se ha subido el actor');
                 setFile('')
-                setMovie({
+                setActor({
                     Nombre: '',
-                    Director: '',
-                    Estreno: '',
-                    Resumen: '',
-                    type: '',
+                    Apellido: '',
+                    Fecha_Nacimiento: '',
+                    Nacionalidad: '',
+                    typo: '',
                     INombre: '',
-                    Poster: ''
+                    Foto: ''
                 })
                 document.getElementById('fileinput').value = null
             } else {
-                console.log('No se pudo realizar el registro de peliculas. Inténtalo más tarde.');
+                console.log('No se pudo realizar el registro de actor. Inténtalo más tarde.');
                 return;
             }
         } catch (error) {
-            console.log('No se pudo realizar el registro de peliculas. Inténtalo más tarde.');
+            console.log('No se pudo realizar el registro de actor. Inténtalo más tarde.');
             return;
         }      
 
@@ -85,28 +83,27 @@ const Movie = () => {
                             <label>Nombre</label>
                         </div>
                         <div className='mb-3'>
-                            <input type="text" name="Nombre" value={movie.Nombre} onChange={handleChange} placeholder="Nombre de Pelicula" />
+                            <input type="text" name="Nombre" value={actor.Nombre} onChange={handleChange} placeholder="Nombre Actor" />
                         </div>
                         <div className='mb-3'>
-                            <label>Director</label>
+                            <label>Apellido</label>
                         </div>
                         <div className='mb-3'>
-                            <input type="text" name="Director" value={movie.Director} onChange={handleChange} placeholder="Nombre de Director" />
+                            <input type="text" name="Apellido" value={actor.Apellido} onChange={handleChange} placeholder="Apellido Actor" />
+                        </div>
+                        <div className='mb-3'>
+                            <label>Fecha de Nacimiento</label>
 
                         </div>
                         <div className='mb-3'>
-                            <label>Fecha de Estreno</label>
+                            <input type="date" name="Fecha_Nacimiento" value={actor.Fecha_Nacimiento} onChange={handleChange} />
 
                         </div>
                         <div className='mb-3'>
-                            <input type="date" name="Estreno" value={movie.Estreno} onChange={handleChange} />
-
+                            <label>Nacionalidad</label>
                         </div>
                         <div className='mb-3'>
-                            <label>Sinopsis</label>
-                        </div>
-                        <div className='mb-3'>
-                            <textarea className="form-control" rows="5" name="Resumen" value={movie.Resumen} onChange={handleChange} placeholder="Resumen de la pelicula" ></textarea>
+                            <input type="text" name="Nacionalidad" value={actor.Nacionalidad} onChange={handleChange} placeholder="Nacionalidad" />
                         </div>
                         <div className='container mt 6'>
                             <div className='card p-3'>
@@ -133,4 +130,4 @@ const Movie = () => {
     );
 }
 
-export default Movie;
+export default Actor;
