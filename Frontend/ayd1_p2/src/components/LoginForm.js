@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-const LoginForm = () => {
+const LoginForm = (userlog, setUserLog) => {
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
 
@@ -18,13 +18,11 @@ const LoginForm = () => {
                     },
                     body: JSON.stringify({ username, password })
                 });
-                const data = await response.json();
+                const data = await response.json();                
+                setUserLog(response.json())
                 if (Object.keys(data).length > 0) {
                     // usuario autenticado, redireccionar a la página de inicio
                     window.location.href = '/UserLoginForm';
-                } else if (response.status === 401) {
-                    // credenciales incorrectas
-                    alert('El nombre de usuario o la contraseña son incorrectos.');
                 } else {
                     // otro error
                     alert('Ocurrió un error al intentar iniciar sesión. Inténtelo de nuevo más tarde.');

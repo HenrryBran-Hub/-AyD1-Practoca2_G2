@@ -14,7 +14,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 
 function App() {
 
-
+  const [userlog, setUserlog] = useState([])
 
   const [listUpdated, setListUpdate] = useState(false)
 
@@ -78,7 +78,7 @@ function App() {
         <Route path='/actor' element={<Actor />}></Route>
         <Route path='/cast' element={<Cast actor={actor} movie={movie} setlistactor={setlistactor} setlistmovie={setlistmovie} />}></Route>
         <Route path='/movies' element={<Movies />}></Route>
-        <Route path='/loginform' element={<LoginForm />}></Route>
+        <Route path='/loginform' element={<LoginForm userlog={userlog} setUserlog={setUserlog}/>}></Route>
         <Route path='/adminform' element={<AdminForm />}></Route>
         <Route path='/UserLoginForm' element={<UserLoginForm />}></Route>
       </Routes>
