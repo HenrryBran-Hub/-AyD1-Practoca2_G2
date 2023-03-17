@@ -1,8 +1,13 @@
 import React from 'react';
+import NavBar from './NavBar';
 
 const HomePage = () => {
-    return <h1>IMDbX</h1>;
+    return (
+        <div>
+            <NavBar />
+            <h1>IMDbX</h1>;
+        </div>
+    );
 };
-
 
 export default HomePage;

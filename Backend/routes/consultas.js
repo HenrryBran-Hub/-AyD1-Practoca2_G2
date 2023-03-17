@@ -266,4 +266,18 @@ router.post('/addWatchlist', (req, res) => {
         }
     });
 });
+//creacion de un login basico 
+router.post('/loginform/post', (req, res) => {
+    let consulta = `SELECT *FROM Usuario
+    WHERE Correo =` + "\'" + req.body.username + "\'" + ` AND ` +
+        ` Contrasenia = ` + "\'" + req.body.password + "\'";
+    mysqlConnection.query(consulta, (err, rows, fields) => {
+        if (!err) {
+            res.json(rows);
+        } else {
+            console.log(err);
+        }
+    })
+});
+
 module.exports = router;
