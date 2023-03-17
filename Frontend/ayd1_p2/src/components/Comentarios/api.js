@@ -1,7 +1,7 @@
 export const getComments = async () => {
   
   const formData = {
-      "pelicula":7
+      "pelicula":1
     }
   try {
     const response = await fetch("http://localhost:9000/getComment", {

@@ -20,8 +20,8 @@ const Comments=({valoros=0})=>{
     const addComment=async (text)=>{
         console.log('Agregando Comentario',text,currentValue);  
         const formData = {
-            "usuario":3,
-            "pelicula":6,
+            "usuario":1,
+            "pelicula":1,
             "punteo":currentValue,
             "comment":text
         }
