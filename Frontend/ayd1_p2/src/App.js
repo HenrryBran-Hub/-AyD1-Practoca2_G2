@@ -6,6 +6,7 @@ import Signup from './components/Signup';
 import Movie from './components/Movie'
 import Actor from './components/Actor'
 import Cast from './components/Cast'
+import Comments from "./components/Comments";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Movies from './components/Movies';
 
@@ -74,7 +75,7 @@ function App() {
         <Route path='/movie' element={<Movie />}></Route>
         <Route path='/actor' element={<Actor />}></Route>
         <Route path='/cast' element={<Cast actor={actor} movie={movie} setlistactor={setlistactor} setlistmovie={setlistmovie} />}></Route>
-        <Route path='/movies' element={<Movies />}></Route>
+        <Route path='/comment' element={<Comments/>}/>
       </Routes>
     </BrowserRouter>
   );
