@@ -5,7 +5,7 @@ const HomePage = () => {
     return (
         <div>
             <NavBar />
-            <h1>IMDbX</h1>;
+            <h1>User Login Form</h1>;
         </div>
     );
 };

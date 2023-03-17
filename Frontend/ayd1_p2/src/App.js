@@ -7,11 +7,14 @@ import Actor from './components/Actor'
 import Cast from './components/Cast'
 import Movies from './components/Movies';
 import LoginForm from "./components/LoginForm";
-import NavBar from "./components/NavBar";
+import AdminForm from "./components/AdminForm";
+import UserLoginForm from "./components/UserLoginForm";
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 
 function App() {
+
+
 
   const [listUpdated, setListUpdate] = useState(false)
 
@@ -66,7 +69,6 @@ function App() {
 
   return (
     <BrowserRouter>
-      <NavBar />
       <Routes>
         <Route path='/' exact='true' element={<HomePage />}></Route>
         <Route path='/signup' exact='' element={<Signup />}></Route>
@@ -77,6 +79,8 @@ function App() {
         <Route path='/cast' element={<Cast actor={actor} movie={movie} setlistactor={setlistactor} setlistmovie={setlistmovie} />}></Route>
         <Route path='/movies' element={<Movies />}></Route>
         <Route path='/loginform' element={<LoginForm />}></Route>
+        <Route path='/adminform' element={<AdminForm />}></Route>
+        <Route path='/userloginform' element={<UserLoginForm />}></Route>
       </Routes>
     </BrowserRouter>
   );
