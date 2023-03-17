@@ -9,6 +9,7 @@ import Cast from './components/Cast'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Movies from './components/Movies';
 
+
 function App() {
 
   const [listUpdated, setListUpdate] = useState(false) 
@@ -73,6 +74,7 @@ function App() {
         <Route path='/movie' element={<Movie />}></Route>
         <Route path='/actor' element={<Actor />}></Route>
         <Route path='/cast' element={<Cast actor={actor} movie={movie} setlistactor={setlistactor} setlistmovie={setlistmovie} />}></Route>
+        <Route path='/movies' element={<Movies />}></Route>
       </Routes>
     </BrowserRouter>
   );

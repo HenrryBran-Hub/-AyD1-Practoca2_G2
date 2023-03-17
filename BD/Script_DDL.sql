@@ -57,9 +57,10 @@ CREATE TABLE IF NOT EXISTS Pelicula (
 #CREAMOS LA TABLA DE Watchlist
 #-------------------------------------------------------------------------
 CREATE TABLE IF NOT EXISTS Watchlist (
+    Id_Watchlist INT AUTO_INCREMENT NOT NULL,
 	Id_Usuario INT NOT NULL,
     Id_Pelicula INT NOT NULL,
-	PRIMARY KEY (Id_Usuario,Id_Pelicula),
+	PRIMARY KEY (Id_Watchlist),
     FOREIGN KEY (Id_Usuario) REFERENCES Usuario(Id_Usuario)
     ON DELETE CASCADE ON UPDATE CASCADE,
     FOREIGN KEY (Id_Pelicula) REFERENCES Pelicula(Id_Pelicula)
