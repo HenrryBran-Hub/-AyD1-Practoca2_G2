@@ -1,10 +1,10 @@
 import React from 'react';
-import NavBar from './NavBar';
+import NavBarAdmin from './NavBarAdmin';
 
 const HomePage = () => {
-    return (
+    return (        
         <div>
-            <NavBar />
+        <NavBarAdmin />
             <h1>Admin Form</h1>;
         </div>
     );

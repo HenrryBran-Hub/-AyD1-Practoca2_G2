@@ -1,13 +1,13 @@
 import React from 'react';
-import NavBar from './NavBar';
+import NavBarUser from './NavBarUser';
 
-const HomePage = () => {
+const UserLoginForm = () => {
     return (
         <div>
-            <NavBar />
+            <NavBarUser />
             <h1>User Login Form</h1>;
         </div>
     );
 };
 
-export default HomePage;
+export default UserLoginForm;

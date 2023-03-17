@@ -80,7 +80,7 @@ function App() {
         <Route path='/movies' element={<Movies />}></Route>
         <Route path='/loginform' element={<LoginForm />}></Route>
         <Route path='/adminform' element={<AdminForm />}></Route>
-        <Route path='/userloginform' element={<UserLoginForm />}></Route>
+        <Route path='/UserLoginForm' element={<UserLoginForm />}></Route>
       </Routes>
     </BrowserRouter>
   );

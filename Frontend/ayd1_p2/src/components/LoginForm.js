@@ -21,7 +21,7 @@ const LoginForm = () => {
                 const data = await response.json();
                 if (Object.keys(data).length > 0) {
                     // usuario autenticado, redireccionar a la página de inicio
-                    window.location.href = '/usersloginform';
+                    window.location.href = '/UserLoginForm';
                 } else if (response.status === 401) {
                     // credenciales incorrectas
                     alert('El nombre de usuario o la contraseña son incorrectos.');
