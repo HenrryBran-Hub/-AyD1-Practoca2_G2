@@ -16,6 +16,10 @@ import KeyboardArrowUpIcon from '@mui/icons-material/KeyboardArrowUp';
 import { TablePagination } from '@mui/material';
 import { width } from '@mui/system';
 
+import { Button } from '@material-ui/core'
+import AddCircleIcon from '@material-ui/icons/AddCircle';
+import CheckCircleIcon from '@material-ui/icons/CheckCircle';
+
 function createData(name, calories, fat, carbs, protein, price) {
   return {
     name,
@@ -39,8 +43,51 @@ function createData(name, calories, fat, carbs, protein, price) {
   };
 }
 
+function Btn(props) {
+  const { rowbtn } = props;
+  const { rowbtn2 } = props;
+  const { indicebtn } = props;
+
+  const handleAgregar = Id => {
+    let info = {
+      "Id_Usuario": 1,
+      "Id_Pelicula": Id
+  }
+
+  const requestInit = {
+      method:'POST',
+      headers: {'Content-Type': 'application/json'},
+      body: JSON.stringify(info)
+  }
+  fetch('http://localhost:9000/addwatchlist', requestInit)
+  .then(res => res.json())
+  .then(res => console.log(res))
+
+  let valBoton = document.getElementById(Id - 1)
+  valBoton.disabled = true
+  valBoton.style.backgroundColor = "White"
+  valBoton.style.color = "#64dd17"
+  valBoton.textContent = "Agregado"
+  valBoton.style.pointerEvents = "none"
+  console.log(Id)
+  }
+
+  for(let i = 0; i < rowbtn2.length; i++){
+    if(rowbtn2[i].Id_pelicula === rowbtn.Id_Pelicula){
+      return(
+        <Button id={indicebtn} variant="contained" style={{background: "White", color: "#64dd17"}} disabled={true} startIcon={<CheckCircleIcon />}>Agregado</Button>
+      )
+    }
+  }
+  return(
+    <Button id={indicebtn} variant="contained" style={{background: "#64dd17", color: "white", height: "30px", width: "115px"}} startIcon={<AddCircleIcon />} onClick={ () => handleAgregar(rowbtn.Id_Pelicula)}>Agregar</Button>
+  );
+}
+
 function Row(props) {
   const { row } = props;
+  const { row2 } = props;
+  const { indice } = props;
   const [open, setOpen] = React.useState(false);
   //const base64String = btoa(String.fromCharCode(...new Uint8Array(row.Poster.data)));
   console.log(row.Poster.data)
@@ -76,6 +123,7 @@ function Row(props) {
                     <TableCell>Nombre</TableCell>
                     <TableCell>Estreno</TableCell>
                     <TableCell>Resumen</TableCell>
+                    <TableCell>Watchlist</TableCell>
                   </TableRow>
                 </TableHead>
                 <TableBody>
@@ -87,6 +135,7 @@ function Row(props) {
                       </TableCell>
                       <TableCell>{row.Resumen}</TableCell>
                       <img src={`data:image/png;base64,${base64String}`} alt=""/>
+                      <Btn rowbtn={row} rowbtn2={row2} indicebtn={indice} />
                     </TableRow>
                 </TableBody>
               </Table>
@@ -141,6 +190,19 @@ export default function Movies() {
         //console.log(movies)
       })
   }, [movies])
+
+  const [listUpdatedWatchlist, setlistUpdatedWatchlist] = React.useState(false)
+  const [watchlist, setWatchlist] = React.useState([])
+  
+  React.useEffect(() => {
+    const getWatchlist = () => {
+      fetch('http://localhost:9000/Watchlist/1')
+      .then(res => res.json())
+      .then(res => setWatchlist(res))
+    }
+    getWatchlist()
+    setlistUpdatedWatchlist(false)
+  },[listUpdatedWatchlist])
   
   const handleChangePage = (event, newPage) => {
     setPage(newPage);
@@ -163,8 +225,8 @@ export default function Movies() {
           </TableRow>
         </TableHead>
         <TableBody>
-          {movies.map((movie) => (
-            <Row key={movie.name} row={movie} />
+          {movies.map((movie, index) => (
+            <Row key={movie.name} row={movie} row2={watchlist} indice={index}/>
           ))}
         </TableBody>
       </Table>

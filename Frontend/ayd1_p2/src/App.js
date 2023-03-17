@@ -9,6 +9,7 @@ import Cast from './components/Cast'
 import Comments from "./components/Comments";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Movies from './components/Movies';
+import Watchlist from "./components/Watchlist";
 
 
 function App() {
@@ -74,6 +75,7 @@ function App() {
         <Route path='/signup' element={<Signup />}></Route>
         <Route path='/movie' element={<Movie />}></Route>
         <Route path='/actor' element={<Actor />}></Route>
+        <Route path='/watchlist' element={<Watchlist />}></Route>
         <Route path='/cast' element={<Cast actor={actor} movie={movie} setlistactor={setlistactor} setlistmovie={setlistmovie} />}></Route>
         <Route path='/comment' element={<Comments/>}/>
       </Routes>

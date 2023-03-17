@@ -235,4 +235,35 @@ router.post('/getComment', (req, res) => {
         }
     })
 });
+
+router.get('/Watchlist/:id', (req, res) => {
+    mysqlConnection.query('select wa.Id_watchlist, us.Nombre, pe.Id_pelicula, pe.Nombre as "Pelicula", pe.Director, pe.Resumen, pe.Estreno from Watchlist wa inner join Pelicula pe on pe.Id_Pelicula = wa.Id_Pelicula inner join Usuario us on us.Id_Usuario = wa.Id_Usuario where us.Id_Usuario = ?', [req.params.id], (err, rows, fields) => {
+       if(!err){
+            res.json(rows);
+        }else{
+            console.log(err);
+        }
+    });
+});
+
+router.delete('/Watchlist/:id', (req, res) => {
+    mysqlConnection.query('delete from Watchlist where Id_Watchlist = ?', [ req.params.id ], (err, rows, fields) => {
+       if(!err){
+            res.json(rows);
+        }else{
+            console.log(err);
+        }
+    });
+});
+
+router.post('/addWatchlist', (req, res) => {
+    let registro = "(" + req.body.Id_Usuario + "," + req.body.Id_Pelicula + ")"
+    mysqlConnection.query('insert into Watchlist(Id_Usuario, Id_Pelicula) values' + registro, (err, rows, fields) => {
+       if(!err){
+            res.json(rows);
+        }else{
+            console.log(err);
+        }
+    });
+});
 module.exports = router;
