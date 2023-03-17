@@ -5,18 +5,15 @@ import Signup from './components/Signup';
 import Movie from './components/Movie'
 import Actor from './components/Actor'
 import Cast from './components/Cast'
-<<<<<<< HEAD
 import Comments from "./components/Comments";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Movies from './components/Movies';
 import Watchlist from "./components/Watchlist";
-=======
 import Movies from './components/Movies';
 import LoginForm from "./components/LoginForm";
 import AdminForm from "./components/AdminForm";
 import UserLoginForm from "./components/UserLoginForm";
 import 'bootstrap/dist/css/bootstrap.min.css';
->>>>>>> CreacionLogin_201314439
 
 
 function App() {
@@ -85,14 +82,11 @@ function App() {
         <Route path='/actor' element={<Actor />}></Route>
         <Route path='/watchlist' element={<Watchlist />}></Route>
         <Route path='/cast' element={<Cast actor={actor} movie={movie} setlistactor={setlistactor} setlistmovie={setlistmovie} />}></Route>
-<<<<<<< HEAD
         <Route path='/comment' element={<Comments/>}/>
-=======
         <Route path='/movies' element={<Movies />}></Route>
         <Route path='/loginform' element={<LoginForm userlog={userlog} setUserlog={setUserlog}/>}></Route>
         <Route path='/adminform' element={<AdminForm />}></Route>
         <Route path='/UserLoginForm' element={<UserLoginForm />}></Route>
->>>>>>> CreacionLogin_201314439
       </Routes>
     </BrowserRouter>
   );
