@@ -213,4 +213,26 @@ router.post('/validadarreparto/post', (req, res) => {
     })
 });
 
+// añadir comentario
+router.post('/addComment', (req,res) =>{
+    let consulta=`CALL AddComeCali(${req.body.usuario},${req.body.pelicula},${req.body.punteo},'${req.body.comment}',@result)`;
+    mysqlConnection.query(consulta, (err, rows) => {
+        if (!err){
+            res.json(rows[0][0]);
+        }else {
+            console.log(err);
+        }
+    })
+});
+// añadir comentario
+router.post('/getComment', (req, res) => {
+    let consulta =` CALL GETCOMENT(${req.body.pelicula})`;
+    mysqlConnection.query(consulta, (err, rows) => {
+        if (!err) {
+            res.json(rows[0]);
+        } else {
+            console.log(err);
+        }
+    })
+});
 module.exports = router;
