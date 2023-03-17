@@ -6,8 +6,6 @@ import Movie from './components/Movie'
 import Actor from './components/Actor'
 import Cast from './components/Cast'
 import Comments from "./components/Comments";
-import 'bootstrap/dist/css/bootstrap.min.css';
-import Movies from './components/Movies';
 import Watchlist from "./components/Watchlist";
 import Movies from './components/Movies';
 import LoginForm from "./components/LoginForm";

@@ -7,6 +7,7 @@ const NavBarUser = () => {
             <div className="container-fluid">
                 <NavLink className="navbar-brand" to="/">Mi Página</NavLink>
                 <NavLink className="navbar-brand" to="/movies">Listado de peliculas</NavLink>
+                <NavLink className="navbar-brand" to="/watchlist">Watchlist</NavLink>
             </div>
         </nav>
     );

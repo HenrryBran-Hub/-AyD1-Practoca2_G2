@@ -18,8 +18,7 @@ const LoginForm = (userlog, setUserLog) => {
                     },
                     body: JSON.stringify({ username, password })
                 });
-                const data = await response.json();                
-                setUserLog(response.json())
+                const data = await response.json();
                 if (Object.keys(data).length > 0) {
                     // usuario autenticado, redireccionar a la página de inicio
                     window.location.href = '/UserLoginForm';
