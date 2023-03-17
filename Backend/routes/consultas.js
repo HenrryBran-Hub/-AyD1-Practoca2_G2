@@ -213,4 +213,18 @@ router.post('/validadarreparto/post', (req, res) => {
     })
 });
 
+//creacion de un login basico 
+router.post('/loginform/post', (req, res) => {
+    let consulta = `SELECT *FROM Reparto
+    WHERE Id_Pelicula =` + "\'" + req.body.Id_Pelicula + "\'" + ` AND ` +
+        ` Id_Actor = ` + "\'" + req.body.Id_Actor + "\'";
+    mysqlConnection.query(consulta, (err, rows, fields) => {
+        if (!err) {
+            res.json(rows);
+        } else {
+            console.log(err);
+        }
+    })
+});
+
 module.exports = router;

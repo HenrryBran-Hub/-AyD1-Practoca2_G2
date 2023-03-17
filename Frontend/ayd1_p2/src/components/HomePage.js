@@ -1,7 +1,12 @@
 import React from 'react';
+import NavBar from './NavBar';
 
 const HomePage = () => {
-    return <h1>IMDbX</h1>;
+    <div>
+        <NavBar />
+        return <h1>IMDbX</h1>;
+    </div>
+
 };
 
 
