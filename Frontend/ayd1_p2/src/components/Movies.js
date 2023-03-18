@@ -18,6 +18,7 @@ import { Button } from '@material-ui/core'
 import AddCircleIcon from '@material-ui/icons/AddCircle';
 import CheckCircleIcon from '@material-ui/icons/CheckCircle';
 import {useNavigate} from "react-router-dom"
+import {user} from "./LoginForm"
 
 
 function createData(name, calories, fat, carbs, protein, price) {
@@ -51,7 +52,7 @@ function Btn(props) {
 
   const handleAgregar = Id => {
    let info = {
-      "Id_Usuario": 1,
+      "Id_Usuario": user.idUser,
       "Id_Pelicula": Id
     }
   const requestInit = {
@@ -98,7 +99,7 @@ function Row(props) {
   let navigate = useNavigate();
   const click=Id=>{
     inform = {
-      "Id_Usuario": 1,
+      "Id_Usuario": user.idUser,
       "Id_Pelicula": row.Id_Pelicula,
       "Nombre":row.Nombre
     }
@@ -227,7 +228,7 @@ export default function Movies() {
   const [watchlist, setWatchlist] = React.useState([])
   React.useEffect(() => {
     const getWatchlist = () => {
-      fetch('http://localhost:9000/Watchlist/1')
+      fetch('http://localhost:9000/Watchlist/'+user.idUser)
       .then(res => res.json())
       .then(res => setWatchlist(res))
     }

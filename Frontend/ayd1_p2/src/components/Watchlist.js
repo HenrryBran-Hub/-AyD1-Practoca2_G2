@@ -1,7 +1,7 @@
 import React, { useState, useEffect, Fragment } from 'react';
 import { Table, TableContainer, TableHead, TableRow, TableCell, TableBody, Button } from '@material-ui/core'
 import DeleteIcon from '@material-ui/icons/Delete';
-
+import {user} from "./LoginForm"
 function Watchlist() {
 
   const [listUpdated, setlistUpdated] = useState(false)
@@ -10,7 +10,7 @@ function Watchlist() {
 
   useEffect(() => {
     const getUsers = () => {
-      fetch('http://localhost:9000/watchlist/1')
+      fetch('http://localhost:9000/watchlist/'+user.idUser)
       .then(res => res.json())
       .then(res => setUsers(res))
     }
@@ -24,7 +24,7 @@ function Watchlist() {
 
   useEffect(() => {
     const getTitulo = () => {
-      fetch('http://localhost:9000/watchlist/1')
+      fetch('http://localhost:9000/watchlist/'+user.idUser)
       .then(res => res.json())
       .then(res => {
         if(res.length === 0){
