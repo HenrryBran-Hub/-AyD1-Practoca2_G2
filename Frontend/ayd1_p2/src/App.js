@@ -80,7 +80,7 @@ function App() {
         <Route path='/actor' element={<Actor />}></Route>
         <Route path='/watchlist' element={<Watchlist />}></Route>
         <Route path='/cast' element={<Cast actor={actor} movie={movie} setlistactor={setlistactor} setlistmovie={setlistmovie} />}></Route>
-        <Route path='/comment' element={<Comments/>}/>
+        <Route path='/movies/comment' element={<Comments/>}/>
         <Route path='/movies' element={<Movies />}></Route>
         <Route path='/loginform' element={<LoginForm userlog={userlog} setUserlog={setUserlog}/>}></Route>
         <Route path='/adminform' element={<AdminForm />}></Route>

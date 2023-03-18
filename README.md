@@ -41,6 +41,9 @@ npm install axios cors express nodemon react-router-dom  --save -dev;
 npm i @material-ui/core
 npm install @material-ui/icons
 npm install react-icons --save 
+npm install --legacy-peer-deps
+npm install --force
+
 ```
 Tambien se borraron varios archivos de react js que no nos servirian.
 Para levantar el servicio del Frontend hacemos lo siguiente:

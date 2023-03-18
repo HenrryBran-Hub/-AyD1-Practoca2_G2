@@ -14,11 +14,11 @@ import Paper from '@mui/material/Paper';
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 import KeyboardArrowUpIcon from '@mui/icons-material/KeyboardArrowUp';
 import { TablePagination } from '@mui/material';
-import { width } from '@mui/system';
-
 import { Button } from '@material-ui/core'
 import AddCircleIcon from '@material-ui/icons/AddCircle';
 import CheckCircleIcon from '@material-ui/icons/CheckCircle';
+import {useNavigate} from "react-router-dom"
+
 
 function createData(name, calories, fat, carbs, protein, price) {
   return {
@@ -43,17 +43,17 @@ function createData(name, calories, fat, carbs, protein, price) {
   };
 }
 
+export let inform;
 function Btn(props) {
   const { rowbtn } = props;
   const { rowbtn2 } = props;
   const { indicebtn } = props;
 
   const handleAgregar = Id => {
-    let info = {
+   let info = {
       "Id_Usuario": 1,
       "Id_Pelicula": Id
-  }
-
+    }
   const requestInit = {
       method:'POST',
       headers: {'Content-Type': 'application/json'},
@@ -73,7 +73,7 @@ function Btn(props) {
   }
 
   for(let i = 0; i < rowbtn2.length; i++){
-    if(rowbtn2[i].Id_pelicula === rowbtn.Id_Pelicula){
+    if(rowbtn2[i].Id_pelicula === rowbtn.Id_Pelicula ){
       return(
         <Button id={indicebtn} variant="contained" style={{background: "White", color: "#64dd17"}} disabled={true} startIcon={<CheckCircleIcon />}>Agregado</Button>
       )
@@ -82,7 +82,10 @@ function Btn(props) {
   return(
     <Button id={indicebtn} variant="contained" style={{background: "#64dd17", color: "white", height: "30px", width: "115px"}} startIcon={<AddCircleIcon />} onClick={ () => handleAgregar(rowbtn.Id_Pelicula)}>Agregar</Button>
   );
+
 }
+
+
 
 function Row(props) {
   const { row } = props;
@@ -92,6 +95,29 @@ function Row(props) {
   //const base64String = btoa(String.fromCharCode(...new Uint8Array(row.Poster.data)));
   console.log(row.Poster.data)
   const base64String = ""
+  let navigate = useNavigate();
+  const click=Id=>{
+    inform = {
+      "Id_Usuario": 1,
+      "Id_Pelicula": row.Id_Pelicula,
+      "Nombre":row.Nombre
+    }
+    //console.log(row.Id_Pelicula)
+    navigate('comment', { replace: true })
+  }
+  const btnComent={
+    display:"inline-block",
+    fontSize:"12px",
+    padding:"8px 8px",
+    backgroundColor:"#f44336",
+    borderRadius:"12px",
+    textAlign:"center",
+    textDecoration:"none",
+    border:"none",
+    color:"white",
+    // cursor: isHover ? 'pointer':'default',
+    // opacity: isHover ? '1':'0.7',
+  }
 
   return (
     <React.Fragment>
@@ -124,6 +150,7 @@ function Row(props) {
                     <TableCell>Estreno</TableCell>
                     <TableCell>Resumen</TableCell>
                     <TableCell>Watchlist</TableCell>
+                    <TableCell>Comentarios</TableCell>
                   </TableRow>
                 </TableHead>
                 <TableBody>
@@ -134,8 +161,13 @@ function Row(props) {
                         {row.Estreno}
                       </TableCell>
                       <TableCell>{row.Resumen}</TableCell>
-                      <img src={`data:image/png;base64,${base64String}`} alt=""/>
-                      <Btn rowbtn={row} rowbtn2={row2} indicebtn={indice} />
+                      <TableCell>
+                        <img src={`data:image/png;base64,${base64String}`} alt=""/>
+                        <Btn rowbtn={row} rowbtn2={row2} indicebtn={indice} />
+                      </TableCell>
+                      <TableCell>
+                        <button style={btnComent} onClick={click}>Ver</button>
+                      </TableCell>
                     </TableRow>
                 </TableBody>
               </Table>
@@ -193,7 +225,6 @@ export default function Movies() {
 
   const [listUpdatedWatchlist, setlistUpdatedWatchlist] = React.useState(false)
   const [watchlist, setWatchlist] = React.useState([])
-  
   React.useEffect(() => {
     const getWatchlist = () => {
       fetch('http://localhost:9000/Watchlist/1')
