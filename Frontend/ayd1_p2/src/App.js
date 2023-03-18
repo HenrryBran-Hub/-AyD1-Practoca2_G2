@@ -11,6 +11,7 @@ import Movies from './components/Movies';
 import LoginForm from "./components/LoginForm";
 import AdminForm from "./components/AdminForm";
 import UserLoginForm from "./components/UserLoginForm";
+import InfoActor from "./components/InfoActor";
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 
@@ -84,6 +85,7 @@ function App() {
         <Route path='/movies' element={<Movies />}></Route>
         <Route path='/loginform' element={<LoginForm userlog={userlog} setUserlog={setUserlog}/>}></Route>
         <Route path='/adminform' element={<AdminForm />}></Route>
+        <Route path='/infoactor' element={<InfoActor />}></Route>
         <Route path='/loginform/UserLoginForm' element={<UserLoginForm />}></Route>
       </Routes>
     </BrowserRouter>
