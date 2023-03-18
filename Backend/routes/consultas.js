@@ -291,7 +291,8 @@ router.get('/getInfoActor', (req, res)=>{
                     FROM 
                         Actor 
                     WHERE 
-                        Id_Actor = ${req.query.id_actor}`
+                        Nombre LIKE '%${req.query.nombre_actor}%'
+                        OR Apellido LIKE '%${req.query.nombre_actor}%' `
     mysqlConnection.query(queryActor, (err, rows, fields) => {
         if (!err){
             res.json(rows);
@@ -314,8 +315,8 @@ router.get('/getCasting', (req, res)=>{
                             JOIN Reparto r on r.Id_Actor = a.Id_Actor
                             JOIN Pelicula p on p.Id_Pelicula = r.Id_Pelicula
                         WHERE 
-                            a.Id_Actor = ${req.query.id_actor};`
-
+                            a.Id_Actor = ${req.query.id_actor}`
+    
     mysqlConnection.query(queryCasting, (err, rows, fields) => {
         if (!err){
             res.json(rows);
