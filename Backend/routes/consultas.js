@@ -20,8 +20,7 @@ const fileUpload = multer({
 
 //En esta parte agregamos nuestros metodos get y post
 
-<<<<<<< HEAD
-<<<<<<< HEAD
+
 //Buscar contacto
 router.get('/getPeliculas',(req, res) => {
     let consulta = "SELECT * FROM Pelicula"
@@ -32,13 +31,12 @@ router.get('/getPeliculas',(req, res) => {
         }
     })
 })
-=======
 //subir archivos y guardar en proyecto
-router.post('/images/post', fileUpload, (req, res) => {
-=======
+// router.post('/images/post', fileUpload, (req, res) => {
+
 //subir archivos y guardar en proyecto de pelicula
 router.post('/registropelicula/post', fileUpload, (req, res) => {
->>>>>>> CreacionActor_201314439
+
     const typo = req.file.mimetype
     const INombre = req.file.originalname
     const Poster = fs.readFileSync(path.join(__dirname, '../images/' + req.file.filename))
@@ -54,7 +52,6 @@ router.post('/registropelicula/post', fileUpload, (req, res) => {
         }
     })
 });
->>>>>>> develp
 
 //subir archivos y guardar en proyecto de actor
 router.post('/registroactor/post', fileUpload, (req, res) => {
@@ -202,4 +199,50 @@ router.post('/validadarreparto/post', (req, res) => {
     })
 });
 
+
+//#region InformacionActor
+router.get('/getInfoActor', (req, res)=>{
+    let queryActor = `SELECT 
+                        Id_Actor,
+                        CONCAT(Nombre, ' ', Apellido) 'Nombre',
+                        DATE_FORMAT(Fecha_Nacimiento, '%d/%m/%Y') 'Fecha_Nacimiento',
+                        Nacionalidad,
+                        Foto
+                    FROM 
+                        Actor 
+                    WHERE 
+                        Id_Actor = ${req.query.id_actor}`
+    mysqlConnection.query(queryActor, (err, rows, fields) => {
+        if (!err){
+            res.json(rows);
+        }else {
+            console.log(err);
+        }
+    })
+})
+
+router.get('/getCasting', (req, res)=>{
+    let queryCasting = `SELECT 
+                            a.Nombre + a.Apellido 'Nombre',
+                            p.Id_Pelicula,
+                            p.Nombre 'Pelicula',
+                            p.Director,
+                            p.Resumen,
+                            p.Poster    
+                        FROM 
+                            Actor a 
+                            JOIN Reparto r on r.Id_Actor = a.Id_Actor
+                            JOIN Pelicula p on p.Id_Pelicula = r.Id_Pelicula
+                        WHERE 
+                            a.Id_Actor = ${req.query.id_actor};`
+
+    mysqlConnection.query(queryCasting, (err, rows, fields) => {
+        if (!err){
+            res.json(rows);
+        }else {
+            console.log(err);
+        }
+    })
+})
+//#endregion
 module.exports = router;

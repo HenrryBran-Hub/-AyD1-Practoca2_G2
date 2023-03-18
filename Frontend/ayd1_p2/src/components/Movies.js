@@ -43,7 +43,7 @@ function Row(props) {
   const { row } = props;
   const [open, setOpen] = React.useState(false);
   //const base64String = btoa(String.fromCharCode(...new Uint8Array(row.Poster.data)));
-  console.log(row.Poster.data)
+  // console.log(row.Poster.data)
   const base64String = ""
 
   return (
@@ -86,15 +86,20 @@ function Row(props) {
                         {row.Estreno}
                       </TableCell>
                       <TableCell>{row.Resumen}</TableCell>
-                      <img src={`data:image/png;base64,${base64String}`} alt=""/>
+                      {/* <img src={`data:image/png;base64,${base64String}`} alt=""/> */}
+                      
                     </TableRow>
+                     
                 </TableBody>
               </Table>
             </Box>
           </Collapse>
         </TableCell>
       </TableRow>
+      
     </React.Fragment>
+
+    
   );
 }
 
@@ -138,7 +143,7 @@ export default function Movies() {
         if(movies.length !== json.length){
           setMovies(json);
         }
-        //console.log(movies)
+        // console.log(movies)
       })
   }, [movies])
   
