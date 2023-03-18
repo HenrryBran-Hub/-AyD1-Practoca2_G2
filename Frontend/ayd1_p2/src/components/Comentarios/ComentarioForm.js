@@ -26,7 +26,7 @@ const CometarioForm=({
     const commentFormTextarea={
         display:"inline-block",
         width:"100%",
-        height:"40px",
+        height:"50px",
         marginBotton:"8px",
         marginTop:"8px",
         boder:"2px solid #4CAF50",

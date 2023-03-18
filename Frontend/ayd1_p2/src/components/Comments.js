@@ -3,13 +3,15 @@ import Comment from "./Comentarios/Comment";
 import {getComments as getCommentApi,createComment as createCommentApi } from './Comentarios/api';
 import CometarioForm from "./Comentarios/ComentarioForm";
 import { AiFillStar} from "react-icons/ai"
+import {inform}from "./Movies"
+//import {user} from "./LoginForm"
 
 
 
 const Comments=({valoros=0})=>{
     const stars=Array(5).fill(0);
     const [backendComments,setBackendComments]=useState([]);
-    const [activeComment,setActiveComment] =useState(null)
+    const [activeComment,setActiveComment] =useState(null);
     const [currentValue, setCurrentValue] = useState(0);
     const [hoverValue, setHoverValue] = useState(undefined);
     
@@ -21,7 +23,7 @@ const Comments=({valoros=0})=>{
         console.log('Agregando Comentario',text,currentValue);  
         const formData = {
             "usuario":1,
-            "pelicula":1,
+            "pelicula":inform.Id_Pelicula,
             "punteo":currentValue,
             "comment":text
         }
@@ -97,12 +99,12 @@ const Comments=({valoros=0})=>{
         display:"inline",
         flexDirection: "row",
         position:"absolute",
-        marginTop:"5px",
+        marginTop:"0px",
         marginLeft:"10px"
     }
     return (
         <div style={comments} className="comments">
-            <h3 style={commentsTitle} className="comments-title">comentario</h3>
+            <h3 style={commentsTitle} className="comments-title">Comentario {inform.Nombre}</h3>
             <div style={commentsFormTitle} className="comment-form-title">
                 Calificame:
                 <div style={starts}>

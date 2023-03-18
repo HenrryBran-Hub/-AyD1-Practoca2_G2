@@ -34,7 +34,7 @@ const Comment=({comment})=>{
     };
     const estrellas={
         position:"relative",
-        marginTop:"9px"
+        marginTop:"2px"
 
     }
     return(

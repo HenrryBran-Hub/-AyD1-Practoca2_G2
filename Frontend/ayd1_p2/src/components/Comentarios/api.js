@@ -1,7 +1,10 @@
+
+import {inform}from "../Movies"
+
 export const getComments = async () => {
   
   const formData = {
-      "pelicula":1
+      "pelicula":inform.Id_Pelicula
     }
   try {
     const response = await fetch("http://localhost:9000/getComment", {
